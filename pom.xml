@@ -1,0 +1,250 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.onezhier.rock</groupId>
+  <artifactId>rock</artifactId>
+  <version>1.0.0</version>
+ <packaging>pom</packaging>
+ 
+ <modules>
+ 	<module>rock-exception</module>
+ 	<module>rock-client</module>
+ 	<module>rock-common</module>
+ 	<module>rock-mvc-core</module>
+                <module>rock-ddd-core</module>
+                <module>rock-framework</module>
+                <module>rock-ddd-archetype</module>
+ 	<module>rock-ddd-framework-base</module>
+ 	<module>rock-ddd-framework</module>
+                <module>rock-mvc-framework</module>
+	<module>rock-mvc-archetype</module>
+	<module>rock-protocol</module>
+	<module>rock-protocol-handler</module>
+	<module>rock-mvc-cloud-alibaba-archetype</module>
+
+	
+ </modules>
+ 
+ <properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+		<lombok.version>1.18.12</lombok.version>
+		<guava.version>20.0</guava.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
+		<slf4j-api.version>1.7.26</slf4j-api.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-codec.version>1.15</commons-codec.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<fastjson.version>1.2.75</fastjson.version>
+		<javax.el.version>3.0.1-b09</javax.el.version>
+		<validation-api.version>2.0.0.Final</validation-api.version>
+		<springframework.version>5.2.9.RELEASE</springframework.version>
+		<micrometer-registry-prometheus.version>1.5.1</micrometer-registry-prometheus.version>
+		<dubbo.version>2.7.8</dubbo.version>
+	 	<easyexcel.version>2.2.7</easyexcel.version>
+	</properties>
+
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>easyexcel</artifactId>
+				<version>${easyexcel.version}</version>
+			</dependency>
+			<!--modules Start -->
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-exception</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-component</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-ddd-framework</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-mvc-framework</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-framework</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+                                                <dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-protocol</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+                                                <dependency>
+				<groupId>com.onezhier.rock</groupId>
+				<artifactId>rock-protocol-handler</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!--modules End -->
+
+			<!-- spring-boot-dependencies start-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons-lang.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>${commons-io.version}</version>
+			</dependency>
+
+			<!--validation-->
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.el</artifactId>
+				<version>${javax.el.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${validation-api.version}</version>
+			</dependency>
+
+			<!--prometheus-->
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-registry-prometheus</artifactId>
+				<version>${micrometer-registry-prometheus.version}</version>
+			</dependency>
+			
+			<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+   <repositories>
+		<repository>
+			<id>pz-repo</id>
+			<name>pz Maven Public Repository</name>
+			<url>http://192.168.1.88:8081/repository/maven-public/</url>
+		</repository>
+	</repositories>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>pz-snapshots</id>
+			<name>pz Maven Snapshots</name>
+			<url>http://192.168.1.88:8081/repository/maven-snapshots/</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+		<repository>
+			<id>pz-releases</id>
+			<name>pz Maven Releases</name>
+			<url>http://192.168.1.88:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+ 
+
+	<build>
+		<!-- 
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		 -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+ 
+ 
+</project>

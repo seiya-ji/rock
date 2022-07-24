@@ -1,0 +1,66 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+
+    <id>distribution assembly</id>
+
+    <formats>
+        <format>dir</format>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <!-- package script files to dist folder -->
+    <fileSets>
+        <fileSet>
+            <directory>${symbol_dollar}{basedir}/scripts</directory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            <outputDirectory>./</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+    <!-- package fat jar to dist folder -->
+    
+    <moduleSets>
+    	<moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>${symbol_dollar}{project.groupId}:${parentArtifactId}-start</include>
+            </includes>
+
+            <binaries>
+                <!-- don't unpack -->
+                <unpack>false</unpack>
+                <!-- don't include dependencies -->
+                <includeDependencies>false</includeDependencies>
+                <outputFileNameMapping>java-${parentArtifactId}.${symbol_dollar}{module.extension}</outputFileNameMapping>
+            </binaries>
+        </moduleSet>
+        <moduleSet>
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>${symbol_dollar}{project.groupId}:${parentArtifactId}-start</include>
+                <include>${symbol_dollar}{project.groupId}:${parentArtifactId}-server</include>
+                <include>${symbol_dollar}{project.groupId}:${parentArtifactId}-client</include>
+            </includes>
+            <sources>
+				<fileSets>
+					<fileSet>
+						<!-- <directory>src</directory> -->
+						<excludes>
+							<exclude>target/**</exclude>
+							<exclude>bin/**</exclude>
+						</excludes>
+					</fileSet>
+				</fileSets>
+			</sources>
+            
+        </moduleSet>
+    </moduleSets>
+</assembly>

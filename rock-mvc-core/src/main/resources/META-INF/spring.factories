@@ -1,0 +1,9 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.pz.rock.core.CoreBootstrap
+
+# Application context Initializers
+org.springframework.context.ApplicationContextInitializer=com.pz.rock.core.context.CustomizeApplicationContextInitializer
+
+# Application Listeners
+#org.springframework.context.ApplicationListener=com.pz.rock.core.context.CustomizeApplicationListener,com.pz.rock.core.context.AppLoadApplicationListener
+org.springframework.context.ApplicationListener=com.pz.rock.core.context.AppLoadApplicationListener

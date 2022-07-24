@@ -1,0 +1,6 @@
+server.port=8081
+server.tomcat.basedir=/Users/edy/eclipse-workspace/rock/rock-core/src/main/resources
+application.servlet.config.enableFrameworkControls=true
+application.servlet.config._contextPreloads=
+application.servlet.config.commandline=
+application.servlet.config.frameworkLauncherClass=com.fzd.rock.core.osgi.CustomizedFrameworkLauncher

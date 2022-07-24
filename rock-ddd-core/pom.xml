@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.onezhier.rock</groupId>
+		<artifactId>rock</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath><!-- lookup parent from repository -->
+	</parent>
+	<artifactId>rock-ddd-core</artifactId>
+
+	<dependencies>
+		<!-- freemarker-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+		<!--java parse-->
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-symbol-solver-core</artifactId>
+			<version>3.18.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core</artifactId>
+			<version>3.18.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core-serialization</artifactId>
+			<version>3.18.0</version>
+		</dependency>
+		<!-- 查询类所有子类-->
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.11</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>com.onezhier.rock</groupId>
+			<artifactId>rock-ddd-framework</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.onezhier.rock</groupId>
+			<artifactId>rock-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.onezhier.rock</groupId>
+			<artifactId>rock-exception</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-loader</artifactId>
+			<version>2.5.5</version>
+		</dependency>
+		
+
+		<!-- <dependency> <groupId>org.eclipse.equinox.servletbridge</groupId> 
+			<artifactId>source</artifactId> <version>1.2.200</version> </dependency> 
+			<dependency> <groupId>org.eclipse.equinox.servletbridge</groupId> <artifactId>extensionbundle</artifactId> 
+			<version>1.2.100</version> </dependency> -->
+
+		<!-- <dependency> <groupId>org.eclipse.equinox</groupId> <artifactId>org.eclipse.equinox.http.servlet</artifactId> 
+			<version>2.2.2</version> </dependency> -->
+
+	<!-- 	<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.equinox.servletbridge</artifactId>
+			<version>1.6.0</version>
+		</dependency> -->
+
+	</dependencies>
+
+
+</project>
